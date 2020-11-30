@@ -85,7 +85,7 @@ birthweight_df =
 
 I am doing my capstone on how structural stigma impacts maternal health. The research review for that project led me to read a lot of articles on low birth weight births and factors that contribute to it. 
 
-My first thought was to include babies length, gestational age, mothers race (minority stress has been shown to impact birth weight), malformations, previous number of low weight births, and cigarettes smoked in my model. However, malformations and previous number of low weight babies did not have wnough variation. 
+My first thought was to include babies length, gestational age, mothers race (minority stress has been shown to impact birth weight), malformations, previous number of low weight births, and cigarettes smoked in my model. However, malformations and previous number of low weight babies did not have enough variation. 
 
 ```{r}
 train_df = sample_n(birthweight_df, 320)
@@ -107,7 +107,7 @@ train_df %>%
   ggplot(aes(x=resid)) +
   geom_density()
 ```
-The residuals look good. 
+The residuals look good.Normally distributed.
 
 Other models:
 
@@ -144,7 +144,7 @@ cv_df %>%
   mutate(model = fct_inorder(model)) %>% 
   ggplot(aes(x = model, y = rmse)) + geom_violin()
 ```
-I am surprised that the model including sex was so much better than the other too. Conceptually, it didn't seem like a meaningful predictor to me. Perhaps it is the head circumference too. Maybe it is a good predictor of physical development  
+I am surprised that the model including sex was so much better than the other two. Conceptually, it didn't seem like a meaningful predictor to me. Perhaps it is the head circumference too. Maybe it is a good predictor of gestational physical development  
 
 ## Problem 3
 ```{r}
